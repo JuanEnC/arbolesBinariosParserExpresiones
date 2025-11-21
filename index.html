@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arboles binarios :: Parser Expresiones</title>
+    <script src="./js/arbol.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <div>
+      <form>
+        <label for="txtEcuacion">
+          Ecuacion:<input type="text" id="txtEcuacion" />
+        </label>
+        <button type="button" id="btnCrearArb">Crear Arbol</button>
+        <button type="button" id="btnResolverPre">Resolver PreOrder</button>
+        <button type="button" id="btnResolverPost">Resolver PostOrder</button>
+      </form>
+    </div>
+    <div id="info"></div>
+    <script>
+      let arbol;
+      const btnCrearArb = document.getElementById("btnCrearArb");
+      btnCrearArb.addEventListener("click", () => {
+        let ecuacion = document.getElementById("txtEcuacion").value;
+        arbol = crearArbol(ecuacion);
+        let msg = document.getElementById("info");
+        msg.innerHTML += "<p>Se ha creo el arbol con raiz: " + arbol.raiz.valor + "</p>";
+      });
+      const btnResolverPre = document.getElementById("btnResolverPre");
+      btnResolverPre.addEventListener("click", () => {
+        let pre = arbol.preOrder();
+        let res = resolverPreOrder(pre);
+        let msg = document.getElementById("info");
+        msg.innerHTML += "<p>PreOrder: " + pre + "</p>" + "<p> Resultado PreOrder: " + res + "</p>";
+      });
+      const btnResolverPost = document.getElementById("btnResolverPost");
+      btnResolverPost.addEventListener("click", () => {
+        let post = arbol.postOrder();
+        let res = resolverPostOrder(post);
+        let msg = document.getElementById("info");
+        msg.innerHTML += "<p>PostOrder: " + post + "</p>" + "<p> Resultado PostOrder: " + res + "</p>";
+      });
+    </script>
+  </body>
+</html>
