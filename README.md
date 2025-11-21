@@ -36,13 +36,17 @@ Fue desarrollado como parte de una materia de **Estructuras de Datos**.
 
 ## 📂 Estructura del Proyecto
 ```
-/src
-├── nodo.js
-├── arbol.js
-├── main.js
-└── utils.js
-index.html
-README.md
+/arbolesBinariosParserExpresiones
+│
+├── index.html           # Interfaz principal de la aplicación
+├── js/
+│   ├── nodo.js
+│   ├── arbol.js
+│   ├── main.js
+│   └── utils.js
+├── css/
+│   └── main.css        # Estilos visuales de la interfaz
+└── README.md             # Documentación del proyecto
 ```
 
 ---
